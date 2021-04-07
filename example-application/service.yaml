@@ -5,8 +5,12 @@ metadata:
   labels:
     app: example-application
 spec:
-  type: ClusterIP
+#  type: ClusterIP
+  type: NodePort
   ports:
   - port: 8080
+    targetPort: 80
+    nodePort: 30080
   selector:
     app: example-application
+
