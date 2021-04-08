@@ -8,5 +8,17 @@ metadata:
 spec:
   chart:
     repository: https://stefanprodan.github.io/podinfo
-    name: podinfo
+    name: podinfo # name of chart under the charts folder in git repository
     version: 3.2.0 # chart version
+  interval: 5m
+  values:
+    replicaCount: 2
+    service:
+      type: NodePort
+      #nodePort: 30090
+    resources:
+      limits:
+        memory: 256Mi
+      requests:
+        cpu: 100m
+        memory: 64Mi
