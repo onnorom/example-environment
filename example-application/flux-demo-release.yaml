@@ -12,3 +12,5 @@ spec:
     git: git@github.com:onnorom/fluxcd-repo.git
     path: helm-charts/fluxcd-demo
     ref: 0.1.0 
+  values:
+    replicaCount: 2
