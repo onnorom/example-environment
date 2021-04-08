@@ -1,0 +1,16 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: fluxcd-demo
+  namespace:fluxcd-demo 
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: fluxcd-demo
+  targetNamespace: fluxcd-demo
+  chart:
+    git: git@github.com:onnorom/fluxcd-repo.git
+    path: helm-charts/fluxcd-demo
+    ref: 0.1.0 # git tag or branch name
+  values:
+    replicaCount: 1
